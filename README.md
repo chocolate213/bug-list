@@ -50,7 +50,7 @@
 
 测试结果：
 
-* JDK 1.7 下输出结果：
+* JDK 1.7 下输出结果（与JDK1.6下输出结果相同）：
 ``` text
 HashTable : [5=5, 4=4, 3=3, 2=2, 1=1]
 HashMap : [3=3, 2=2, 1=1, 5=5, 4=4]
@@ -69,7 +69,7 @@ ConcurrentHashMap : [1=1, 2=2, 3=3, 4=4, 5=5]
 ```
 
 结论：
-* JDK1.7中，keySet方法以及entrySet方法将会按照如下顺序排序：
+* JDK1.7（1.6）中，keySet方法以及entrySet方法将会按照如下顺序排序：
 > 1. HashTable: 按照key降序排序；
 > 2. HashMap: 按照key的某种顺序排序（无论put元素的顺序如何，都会按照某种顺序排序），但是既不是升序，也不是降序，也不是原序；
 > 3. LinkedHashMap: 按照key原序排序；
