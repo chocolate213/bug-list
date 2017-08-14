@@ -203,6 +203,7 @@ idea中需要去掉Tomcat配置中的VM Options中的参数：-Dfile.encoding=UT
 13. 是否声明HTML文档的doctype将会对HTML文档样式造成影响，所以尽量声明HTML文档的DOCTYPE:
 ``` html
 <!DOCTYPE html>
+</html>
 ...
 </html>
 ```
