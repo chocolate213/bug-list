@@ -1,5 +1,8 @@
 # bug-list
 
+## 16. SpringMVC @Value标签无法正确注入properties文件键值对问题
+@Value标签可将配置文件中的键值对注入到组件中，但是要注意：如果SpringMVC配置文件只扫描Controller标签，那么在@Controller标签注解的类中，只能使用SpringMVC配置文件所配置的properties配置文件（在哪个配置文件中配置的就只能在哪注入）
+
 ## 15. JS中Number类型问题
 * JS中能表示的整数的最大位数为15位（保证精度），超过15位将会丢失精度：
 * JS中小数的最大位数是 17，但是浮点运算并不总是 100% 准确：
