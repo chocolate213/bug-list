@@ -1,5 +1,10 @@
 # bug-list
 
+## 17. kafka启动报错：There is insufficient memory for the Java Runtime Environment to continue.
+错误原因：kafka默认内存配置为-Xmx1G -Xms1G，如果机器内存小于该配置，kafka将无法完成初始化，导致报错
+解决办法：调整kafk启动参数，将虚拟机内存适当调低，调整kafka-server-start.sh配置文件：
+-Xmx256m -Xms128m
+
 ## 16. SpringMVC @Value标签无法正确注入properties文件键值对问题
 @Value标签可将配置文件中的键值对注入到组件中，但是要注意：如果SpringMVC配置文件只扫描Controller标签，那么在@Controller标签注解的类中，只能使用SpringMVC配置文件所配置的properties配置文件（在哪个配置文件中配置的就只能在哪注入）
 
