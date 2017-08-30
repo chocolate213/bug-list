@@ -1,5 +1,30 @@
 # bug-list
 
+## 18. 常量为什么要同时使用static final修饰: 会提高性能, 但是只对基本数据类型和String类型起作用
+
+链接：https://developer.android.com/training/articles/perf-tips.html#UseFinal
+
+Consider the following declaration at the top of a class:
+
+``` java
+  static int intVal = 42;
+  static String strVal = "Hello, world!";
+```
+
+
+The compiler generates a class initializer method, called <clinit>, that is executed when the class is first used. The method stores the value 42 into intVal, and extracts a reference from the classfile string constant table for strVal. When these values are referenced later on, they are accessed with field lookups.
+
+We can improve matters with the "final" keyword:
+
+``` java
+static final int intVal = 42;
+static final String strVal = "Hello, world!";
+```
+
+The class no longer requires a <clinit> method, because the constants go into static field initializers in the dex file. Code that refers to intVal will use the integer value 42 directly, and accesses to strVal will use a relatively inexpensive "string constant" instruction instead of a field lookup.
+
+- Note: This optimization applies only to *primitive types and String constants*, not arbitrary reference types. Still, it's good practice to declare constants static final whenever possible
+
 ## 17. kafka启动报错：There is insufficient memory for the Java Runtime Environment to continue.
 错误原因：kafka默认内存配置为-Xmx1G -Xms1G，如果机器内存小于该配置，kafka将无法完成初始化，导致报错
 解决办法：调整kafk启动参数，将虚拟机内存适当调低，调整kafka-server-start.sh配置文件：
