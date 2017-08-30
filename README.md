@@ -1,5 +1,14 @@
 # bug-list
 
+## 19. Integer#parseInt VS Integer#valueOf
+方法签名：
+``` java
+public static Integer valueOf(String s);
+public static int parseInt(String s);
+```
+可以看到valueOf返回的是Integer对象，而parseInt返回的是int基本数据类型，有时候对于int的装箱（boxed）并无意义，所以通常情况下还是选用Integer#parseInt
+
+
 ## 18. 常量为什么要同时使用static final修饰: 会提高性能, 但是只对基本数据类型和String类型起作用
 
 链接：https://developer.android.com/training/articles/perf-tips.html#UseFinal
