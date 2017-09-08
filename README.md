@@ -1,5 +1,11 @@
 # bug-list
 
+## 21. com.fasterxml.jackson.annotation.@JsonFormat标签时区错误问题
+使用@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")来进行字符串转日期，会出现转换时区不正确的问题，使用时应手动指定时区：
+``` java
+@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+```
+
 ## 20. Elasticsearch 5.4.0版本客户端报错：java.lang.NoClassDefFoundError: Could not initialize class org.apache.log4j.LogManager
 原因：缺少log4j-api依赖
 ``` xml
