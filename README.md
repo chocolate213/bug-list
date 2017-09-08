@@ -1,5 +1,16 @@
 # bug-list
 
+## 20. Elasticsearch 5.4.0版本客户端报错：java.lang.NoClassDefFoundError: Could not initialize class org.apache.log4j.LogManager
+原因：缺少log4j-api依赖
+``` xml
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.6.2</version>
+</dependency>
+```
+
+
 ## 19. Integer#parseInt VS Integer#valueOf
 方法签名：
 ``` java
