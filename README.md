@@ -1,5 +1,9 @@
 # bug-list
 
+## 22. org.apache.tools.ant.taskdefs.SQLExec 从文件读取数据库脚本并执行出现乱码问题
+``` java
+exec.setEncoding("UTF-8");  //设置读取文件的编码方式
+```
 ## 21. com.fasterxml.jackson.annotation.@JsonFormat标签时区错误问题
 使用@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")来进行字符串转日期，会出现转换时区不正确的问题，使用时应手动指定时区：
 ``` java
