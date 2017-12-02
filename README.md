@@ -1,5 +1,20 @@
 # bug-list
 
+##23. 解决Maven test操作时乱码问题：添加如下插件
+
+``` xml
+<!-- 解决maven test命令时console出现中文乱码乱码 -->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.20.1</version>
+    <configuration>
+        <forkMode>once</forkMode>
+        <argLine>-Dfile.encoding=UTF-8</argLine>
+    </configuration>
+</plugin>
+```
+
 ## 22. org.apache.tools.ant.taskdefs.SQLExec 从文件读取数据库脚本并执行出现乱码问题
 ``` java
 exec.setEncoding("UTF-8");  //设置读取文件的编码方式
