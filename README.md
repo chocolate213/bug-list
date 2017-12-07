@@ -1,10 +1,10 @@
 # bug-list
 
-##24. GB2313 to UTF-8
+## 24. GB2313 to UTF-8
 
 使用Intellij IDEA转换即可
 
-##23. 解决Maven test操作时乱码问题：添加如下插件
+## 23. 解决Maven test操作时乱码问题：添加如下插件
 
 ``` xml
 <!-- 解决maven test命令时console出现中文乱码乱码 -->
