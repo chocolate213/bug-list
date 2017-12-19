@@ -4,6 +4,15 @@
 
 使用Intellij IDEA转换即可
 
+## 24. 解决jetty报错：请求的操作无法在使用用户映射区域打开的文件上执行
+在web.xml文件中添加如下配置：
+``` xml
+<context-param>  
+    <param-name>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</param-name>  
+    <param-value>false</param-value>  
+</context-param>  
+```
+
 ## 23. 解决Maven test操作时乱码问题：添加如下插件
 
 ``` xml
