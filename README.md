@@ -1,6 +1,31 @@
 # bug-list
 
-## 24. GB2313 to UTF-8
+## 28. IDEA 中 MyBatis配置文件 SQL标签报错
+
+ Setting -> Editor-> lanuage injections 
+
+ 找到ibatis3:sql|select|insert|update|delete，编辑，删除Name里面" sql| "，以及local name里面的"sql|"，apply->ok。
+
+## 27. MyBatis判断集合是否为Null
+
+MyBatis 使用OGNL表达式来对元素进行操作，所以可以使用collection.size()方式获取集合元素大小
+
+``` xml
+<if test="indexIdList != null AND indexIdList.size() > 0 ">
+                AND i.id in
+                <foreach collection="indexIdList" item="indexId" separator="," open="(" close=")">
+                    #{indexId}
+                </foreach>
+</if>
+```
+
+## 26. Idea更新失败 Connection Time Out
+
+File -> Appearance & Behavior -> System Settings -> Updates
+
+Uncheck *Use secure connection*
+
+## 25. GB2313 to UTF-8
 
 使用Intellij IDEA转换即可
 
